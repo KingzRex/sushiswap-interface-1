@@ -25,12 +25,12 @@ const Desktop: FC = () => {
 
   return (
     <>
-      <header className="fixed z-20 hidden w-full lg:block" style={{ height: HEADER_HEIGHT }}>
+      <header className="hidden fixed z-20 w-full lg:block" style={{ height: HEADER_HEIGHT }}>
         <nav className={NAV_CLASS}>
           <Container maxWidth="full" className="mx-auto">
-            <div className="flex items-center justify-between gap-4 px-6">
+            <div className="flex gap-4 justify-between items-center px-6">
               <div className="flex gap-4">
-                <div className="flex items-center w-6 mr-4">
+                <div className="flex items-center mr-4 w-6">
                   <Image src="https://app.sushi.com/images/logo.svg" alt="Sushi logo" width="24px" height="24px" />
                 </div>
                 {menu.map((node) => {
@@ -38,7 +38,7 @@ const Desktop: FC = () => {
                 })}
               </div>
 
-              <div className="flex items-center justify-end w-auto shadow select-none whitespace-nowrap">
+              <div className="flex justify-end items-center w-auto whitespace-nowrap shadow select-none">
                 {account && chainId && (
                   <Typography weight={700} variant="sm" className="px-2 py-5 font-bold">
                     {userEthBalance ? (
@@ -76,7 +76,7 @@ const Desktop: FC = () => {
             </div>
           </Container>
         </nav>
-        <div className="relative bg-indigo-600">
+        {/*  <div className="relative bg-indigo-600">
           <div className="px-3 py-3 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="pr-16 sm:px-16 sm:text-center">
               <p className="font-medium text-white">
@@ -86,7 +86,7 @@ const Desktop: FC = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </header>
       <div style={{ height: HEADER_HEIGHT + 48, minHeight: HEADER_HEIGHT }} />
     </>
